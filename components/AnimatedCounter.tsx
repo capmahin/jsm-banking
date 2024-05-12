@@ -1,9 +1,11 @@
-import React from 'react'
+'use client'
 
-const AnimatedCounter = () => {
+import CountUp from 'react-countup'
+
+const AnimatedCounter = ({amount}: {amount:number}) => {
   return (
     <div>
-      
+      <CountUp end={100} />
     </div>
   )
 }
