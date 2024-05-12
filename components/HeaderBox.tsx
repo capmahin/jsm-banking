@@ -5,7 +5,12 @@ user
 }: HeaderBoxProps) => {
   return (
     <div className="header-box">
-      <h1 className="header-box-title">{title}</h1>
+      <h1 className="header-box-title">
+        {title}
+        {type === 'greeting' && (
+            <span>{user}</span>
+        )}
+        </h1>
     </div>
   )
 }
