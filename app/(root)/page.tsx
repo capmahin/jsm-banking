@@ -16,7 +16,11 @@ const Home = () => {
             transactions efficiently"
             />
 
-            <TotalBalanceBox/>
+            <TotalBalanceBox
+            accounts={[]}
+            totalBanks={1}
+            totalCurrentBalance={1250.35}
+            />
         </header>
     </div>
    </section>
