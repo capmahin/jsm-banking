@@ -10,7 +10,9 @@ const TotalBalanceBox = ({
          </div>
 
          <div className='flex flex-col gap-6'>
-
+             <h2 className='header-2'>
+                 {totalBanks}
+             </h2>
          </div>
     </section>
   )
