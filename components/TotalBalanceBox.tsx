@@ -17,6 +17,10 @@ const TotalBalanceBox = ({
                <p className='total-balance-label'>
                 Total Current Balance
                </p>
+
+               <p className='total-balance-amount flex-center gap-2'>
+                    {totalCurrentBalance}
+               </p>
              </div>
          </div>
     </section>
