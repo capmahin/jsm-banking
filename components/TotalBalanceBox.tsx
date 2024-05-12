@@ -4,9 +4,15 @@ const TotalBalanceBox = ({
     accounts =[], totalBanks, totalCurrentBalance
 }: TotalBalanceBoxProps) => {
   return (
-    <div>
-      
-    </div>
+    <section className='total-balance'>
+         <div className='total-balance-chart'>
+            {/* DoughnutChart */}
+         </div>
+
+         <div className='flex flex-col gap-6'>
+
+         </div>
+    </section>
   )
 }
 
