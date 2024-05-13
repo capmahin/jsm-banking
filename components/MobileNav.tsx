@@ -1,5 +1,8 @@
+"use client"
+
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetDescription,
   SheetHeader,
@@ -27,23 +30,27 @@ const MobileNav = ({user}: MobileNavProps) => {
     className="cursor-pointer"
     />
   </SheetTrigger>
-  <SheetContent side="left">
-  <Link href="/" className='mb-12 cursor-pointer flex items-center gap-2'>
+  <SheetContent side="left" className="border-none bg-white">
+  <Link href="/" className=' cursor-pointer flex items-center gap-1 px-4'>
           <Image
             src="/icons/logo.svg"
             width={34}
             height={34}
             alt='Horizon logo'
-            className='size-[24px]
-            max-xl:size-14'
+            
           />
-          <h1 className='sidebar-logo'>Horizon</h1>
+          <h1 className='text-26 font-ibm-plex-serif font-bold text-black-1'>Horizon</h1>
          </Link>
 
-         {sidebarLinks.map((item)=>{
-            const isActive = pathname===item.route || pathname.startsWith(`${item.route}`)
+         <div className="mobilenav-sheet">
+           <SheetClose asChild>
+            <nav className="flex h-full flex-col gap-6 pt-16 text-white">
+            {sidebarLinks.map((item)=>{
+            const isActive = pathname===item.route || pathname.startsWith(`${item.route}/`)
+
             return(
-                <Link href={item.route} key={item.label}
+            <SheetClose asChild key={item.route}>
+               <Link href={item.route} key={item.label}
                 className={cn('sidebar-link',{'bg-bank-gradient':isActive})}>
                   <div className='relative size-6'>
                       <Image
@@ -61,8 +68,15 @@ const MobileNav = ({user}: MobileNavProps) => {
                     {item.label}
                   </p>
                 </Link>
+            </SheetClose>
+                
             )
          })}
+            </nav>
+           </SheetClose>
+         </div>
+
+        
   </SheetContent>
 </Sheet>
 
