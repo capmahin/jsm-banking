@@ -34,6 +34,10 @@ const Sidebar = ({user}: SiderbarProps) => {
                       <Image
                       src={item.imgURL}
                       alt={item.label}
+                      fill
+                      className={cn({
+                        'brightness-[3] invisible':isActive
+                      })}
                       />
                   </div>
                 </Link>
