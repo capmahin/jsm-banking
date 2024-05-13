@@ -36,7 +36,7 @@ const Sidebar = ({user}: SiderbarProps) => {
                       alt={item.label}
                       fill
                       className={cn({
-                        'brightness-[3] invisible':isActive
+                        'brightness-[3] invert-0':isActive
                       })}
                       />
                   </div>

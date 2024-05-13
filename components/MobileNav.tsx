@@ -51,17 +51,18 @@ const MobileNav = ({user}: MobileNavProps) => {
             return(
             <SheetClose asChild key={item.route}>
                <Link href={item.route} key={item.label}
-                className={cn('sidebar-link',{'bg-bank-gradient':isActive})}>
-                  <div className='relative size-6'>
+                className={cn('mobilenav-sheet_close w-full',{'bg-bank-gradient':isActive})}>
+                  
                       <Image
                       src={item.imgURL}
                       alt={item.label}
-                      fill
+                      width={20}
+                      height={20}
                       className={cn({
-                        'brightness-[3] invisible':isActive
+                        'brightness-[3] invert-0':isActive
                       })}
                       />
-                  </div>
+                  
                   <p className={cn('sidebar-label',{
                     '!text-white':isActive
                   })}>
