@@ -63,8 +63,8 @@ const MobileNav = ({user}: MobileNavProps) => {
                       })}
                       />
                   
-                  <p className={cn('sidebar-label',{
-                    '!text-white':isActive
+                  <p className={cn('text-16 font-serif text-black-2',{
+                    'text-white':isActive
                   })}>
                     {item.label}
                   </p>
@@ -73,8 +73,14 @@ const MobileNav = ({user}: MobileNavProps) => {
                 
             )
          })}
+
+
+         USER
             </nav>
            </SheetClose>
+
+
+           FOOTER
          </div>
 
         
