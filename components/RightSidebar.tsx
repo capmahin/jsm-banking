@@ -12,11 +12,20 @@ const RightSidebar = ({user,transactions,banks}: RightSidebarProps) => {
                     </span>
               </div>
               <div className='profile-details'>
-                    <h1>
+                    <h1 className='profile-name'>
                         {user.firstName} {user.lastName}
                     </h1>
+                    <p className='profile-email'>
+                        {user.email}
+                    </p>
               </div>
            </div>
+       </section>
+
+       <section className='banks'>
+          <div className='flex w-full justify-between'>
+              
+          </div>
        </section>
    </aside>
   )
