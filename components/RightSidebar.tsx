@@ -2,7 +2,11 @@ import React from 'react'
 
 const RightSidebar = ({user,transactions,banks}: RightSidebarProps) => {
   return (
-    <div>RightSidebar</div>
+   <aside className='right-sidebar'>
+       <section className='flex flex-col pb-8'>
+           
+       </section>
+   </aside>
   )
 }
 
