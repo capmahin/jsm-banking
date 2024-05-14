@@ -35,7 +35,10 @@ const RightSidebar = ({user,transactions,banks}: RightSidebarProps) => {
                    width={20}
                    height={20}
                    alt='plus'
-                   />           
+                   />  
+                   <h2 className='text-14 font-semibold text-gray-600'>
+                    Add Bank
+                    </h2>         
               </Link>
           </div>
        </section>
