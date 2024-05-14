@@ -1,6 +1,6 @@
 import React from 'react'
 
-const RightSidebar = () => {
+const RightSidebar = ({user,transactions,banks}: RightSidebarProps) => {
   return (
     <div>RightSidebar</div>
   )
