@@ -85,7 +85,7 @@ const AuthForm = ({type}:{type: string}) => {
                   {...field}
                   />
                  </FormControl>
-                 <FormMessage className='form-message'/>
+                 <FormMessage className='form-message mt-2'/>
               </div>
             </div>
           )}
