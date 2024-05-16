@@ -28,6 +28,7 @@ const AuthForm = ({type}:{type: string}) => {
         defaultValues: {
           email: "",
           password:''
+          
         },
       })
      
@@ -72,11 +73,11 @@ const AuthForm = ({type}:{type: string}) => {
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
         
        <CustomInput control={form.control}
-       name='email' label='username'
-       placeholder='Enter your username'
+       name='email' label='Email'
+       placeholder='Enter your email'
        />
        <CustomInput control={form.control}
-       name='password' label='password'
+       name='password' label='Password'
        placeholder='Enter your password'
        />
         
