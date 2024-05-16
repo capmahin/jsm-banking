@@ -85,7 +85,7 @@ const AuthForm = ({type}:{type: string}) => {
        placeholder='Enter your password'
        />
        
-        
+        <div className='flex flex-col gap-4'>
         <Button  type="submit" disabled={isLoading} className='form-btn'>
           {isLoading ? (
             <>
@@ -95,14 +95,19 @@ const AuthForm = ({type}:{type: string}) => {
             </>
           ): type === 'sign-in' ? 'Sign In': 'Sign Up'}
         </Button>
+        </div>
       </form>
     </Form>
     <footer className='flex justify-center gap-1'>
-        <p>
+        <p className='text-14 font-normal text-gray-600'>
           {type === 'sign-in'
           ? "Don't have an account?"
            : "Already have an account"}
         </p>
+        <Link href={type === 'sign-in' ? '/sign-up' :'/sign-in'}
+        className='form-link'>
+        {type === 'sign-in' ? 'Sign up' :'Sign in'}
+        </Link>
     </footer>
             </>
            )
