@@ -80,6 +80,7 @@ const AuthForm = ({type}:{type: string}) => {
        name='password' label='Password'
        placeholder='Enter your password'
        />
+       
         
         <Button type="submit">Submit</Button>
       </form>
