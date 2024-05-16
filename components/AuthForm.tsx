@@ -24,7 +24,7 @@ import { Loader2 } from 'lucide-react';
 
 const AuthForm = ({type}:{type: string}) => {
     const [user, setUser] = useState(null)
-    const [isLoading, setIsLoading] = useState(false)
+    const [isLoading, setIsLoading] = useState(true)
     const form = useForm<z.infer<typeof authFormSchema>>({
         resolver: zodResolver(authFormSchema),
         defaultValues: {
@@ -86,14 +86,14 @@ const AuthForm = ({type}:{type: string}) => {
        />
        
         
-        <Button  type="submit" className='form-btn'>
+        <Button  type="submit" disabled={isLoading} className='form-btn'>
           {isLoading ? (
             <>
             <Loader2 size={20}
             className='animate-spin'/> &nbsp;
             Loading...
             </>
-          ): type === 'sign-in'}
+          ): type === 'sign-in' ? 'Sign In': 'Sign Up'}
         </Button>
       </form>
     </Form>
