@@ -24,7 +24,7 @@ import { Loader2 } from 'lucide-react';
 
 const AuthForm = ({type}:{type: string}) => {
     const [user, setUser] = useState(null)
-    const [isLoading, setIsLoading] = useState(true)
+    const [isLoading, setIsLoading] = useState(false)
     const form = useForm<z.infer<typeof authFormSchema>>({
         resolver: zodResolver(authFormSchema),
         defaultValues: {
@@ -97,6 +97,9 @@ const AuthForm = ({type}:{type: string}) => {
         </Button>
       </form>
     </Form>
+    <footer className='flex justify-center gap-1'>
+
+    </footer>
             </>
            )
           
