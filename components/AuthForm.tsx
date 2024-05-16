@@ -23,6 +23,7 @@ import CustomInput from './CustomInput';
 
 const AuthForm = ({type}:{type: string}) => {
     const [user, setUser] = useState(null)
+    const [isLoading, setIsLoading] = useState(false)
     const form = useForm<z.infer<typeof authFormSchema>>({
         resolver: zodResolver(authFormSchema),
         defaultValues: {
