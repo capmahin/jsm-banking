@@ -78,7 +78,10 @@ const AuthForm = ({type}:{type: string}) => {
         {
           type === 'sign-up' &&(
             <> 
-            
+              <CustomInput control={form.control}
+       name='email' label='Email'
+       placeholder='Enter your email'
+       />
             
             </>
           )
