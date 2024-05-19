@@ -45,6 +45,8 @@ const AuthForm = ({type}:{type: string}) => {
           setIsLoading(false)
         } catch (error) {
           
+        }finally{
+          setIsLoading(false)
         }
         
       }
