@@ -105,7 +105,7 @@ const AuthForm = ({type}:{type: string}) => {
              placeholder='Example: 11101'
                />
                </div>
-             <div className='flex gap-4'>
+             <div className='flex'>
              <CustomInput control={form.control}
                name='dateOfBirth' label='Date of Birth'
              placeholder='YYYY-MM-DD'
@@ -148,9 +148,8 @@ const AuthForm = ({type}:{type: string}) => {
           ? "Don't have an account?"
            : "Already have an account"}
         </p>
-        <Link href={type === 'sign-in' ? '/sign-up' :'/sign-in'}
-        className='form-link'>
-        {type === 'sign-in' ? 'Sign up' :'Sign in'}
+        <Link href={type === 'sign-in' ? '/sign-up' : '/sign-in'} className="form-link">
+        {type === 'sign-in' ? 'Sign up' : 'Sign in'}
         </Link>
     </footer>
             </>
