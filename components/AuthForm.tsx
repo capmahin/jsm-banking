@@ -25,8 +25,10 @@ import { Loader2 } from 'lucide-react';
 const AuthForm = ({type}:{type: string}) => {
     const [user, setUser] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
-    const form = useForm<z.infer<typeof authFormSchema>>({
-        resolver: zodResolver(authFormSchema),
+    const formSchema = authFormSchema(type);
+
+    const form = useForm<z.infer<typeof formSchema>>({
+        resolver: zodResolver(formSchema),
         defaultValues: {
           email: "",
           password:''
@@ -35,7 +37,7 @@ const AuthForm = ({type}:{type: string}) => {
       })
      
       // 2. Define a submit handler.
-      function onSubmit(values: z.infer<typeof authFormSchema>) {
+      function onSubmit(values: z.infer<typeof formSchema>) {
         // Do something with the form values.
         // ✅ This will be type-safe and validated.
         setIsLoading(true)
