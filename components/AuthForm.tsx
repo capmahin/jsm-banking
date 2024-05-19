@@ -80,7 +80,8 @@ const AuthForm = ({type}:{type: string}) => {
         {
           type === 'sign-up' &&(
             <> 
-              <CustomInput control={form.control}
+            <div className='flex gap-4'>
+            <CustomInput control={form.control}
                name='firstName' label='First Name'
              placeholder='Enter your first name'
                />
@@ -88,6 +89,8 @@ const AuthForm = ({type}:{type: string}) => {
                name='lastName' label='Last Name'
              placeholder='Enter your last name'
                />
+            </div>
+              
               <CustomInput control={form.control}
                name='address1' label='Address'
              placeholder='Enter your specific address'
