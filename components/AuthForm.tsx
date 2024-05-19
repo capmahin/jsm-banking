@@ -41,10 +41,9 @@ const AuthForm = ({type}:{type: string}) => {
         
         setIsLoading(true)
         try {
-          console.log(values)
-          setIsLoading(false)
+          //Sign up with Appwrite
         } catch (error) {
-          
+          console.log(error)
         }finally{
           setIsLoading(false)
         }
