@@ -41,7 +41,7 @@ const AuthForm = ({type}:{type: string}) => {
         
         setIsLoading(true)
         try {
-          //Sign up with Appwrite
+          //Sign up with Appwrite & create plain link
         } catch (error) {
           console.log(error)
         }finally{
