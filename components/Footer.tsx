@@ -1,6 +1,10 @@
+import Image from 'next/image'
 import React from 'react'
 
 const Footer = ({user,type='desktop'}:FooterProps) => {
+    const handleLogOut = async ()=>{
+        
+    }
   return (
     <footer className='footer'>
        <div className={type === 'mobile' ? 'footer_name-mobile' : 'footer_name'}>
@@ -15,9 +19,14 @@ const Footer = ({user,type='desktop'}:FooterProps) => {
             {user.name}
           </h1>
           <p className='text-14 truncate font-normal
-          text-gray-600'>
-
+          text-gray-700 font-semibold'>
+           {user.email}
           </p>
+       </div>
+       <div className='footer_image' onClick={handleLogOut}>
+        <Image
+        src="icons/logout.svg" fill alt="jsm"
+        />
        </div>
     </footer>
   )
