@@ -23,7 +23,7 @@ const Footer = ({user,type='desktop'}:FooterProps) => {
           <h1 className="text-14 truncate font-normal text-gray-600">
             {user.name}
           </h1>
-          <p className='text-14 truncate font-normal
+          <p className='text-14 truncate 
           text-gray-700 font-semibold'>
            {user.email}
           </p>
