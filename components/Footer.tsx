@@ -10,6 +10,12 @@ const Footer = ({user,type='desktop'}:FooterProps) => {
             {user.firstName[0]}
          </p>
        </div>
+
+       <div className=
+       {type === 'mobile'? 
+       'footer_name-mobile': 'footer_name'}>
+
+       </div>
     </footer>
   )
 }
