@@ -20,7 +20,7 @@ import { authFormSchema } from '@/lib/utils';
 import CustomInput from './CustomInput';
 import { Loader2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-import { signUp } from '@/lib/actions/user.actions';
+import { getLoggedInUser, signUp } from '@/lib/actions/user.actions';
 import SignIn from '@/app/(auth)/sign-in/page';
 
 
@@ -31,6 +31,7 @@ const AuthForm = ({type}:{type: string}) => {
     const [user, setUser] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
     const formSchema = authFormSchema(type);
+   
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
