@@ -56,3 +56,10 @@ export async function getLoggedInUser() {
     }
   }
   
+  export const logoutAccount = async()=>{
+    try {
+      
+    } catch (error) {
+      
+    }
+  }
