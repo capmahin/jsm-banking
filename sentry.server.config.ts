@@ -18,5 +18,3 @@ Sentry.init({
   
 });
 
-//working
-//today is off day
