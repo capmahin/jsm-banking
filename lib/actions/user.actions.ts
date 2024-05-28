@@ -4,7 +4,8 @@ import { ID } from "node-appwrite";
 import { createAdminClient, createSessionClient } from "../appwrite";
 import { cookies } from "next/headers";
 import { parseStringify } from "../utils";
-import { Products } from "plaid";
+import { CountryCode, Products } from "plaid";
+import { plaidClient } from "../plaid";
 
 export const signIn =async ({email, password}: signInProps)=>{
     try {
@@ -76,8 +77,12 @@ export async function getLoggedInUser() {
           client_user_id: user.$id
         },
         client_name:user.name,
-        products:['auth'] as Products[]
+        products:['auth'] as Products[],
+        language:'en',
+        country_codes:['US'] as CountryCode[],
+        
       }
+      const response = await plaidClient.linkTokenCreate(tokenParams)
     } catch (error) {
       console.log(error);
     }
