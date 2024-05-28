@@ -67,3 +67,11 @@ export async function getLoggedInUser() {
       return null;
     }
   }
+
+  export const createLinkToken= async(user: User)=>{
+    try {
+      
+    } catch (error) {
+      console.log(error);
+    }
+  }
