@@ -82,7 +82,9 @@ export async function getLoggedInUser() {
         country_codes:['US'] as CountryCode[],
         
       }
-      const response = await plaidClient.linkTokenCreate(tokenParams)
+      const response = await plaidClient.linkTokenCreate(tokenParams);
+
+      return parseStringify({linkToken: response.data.link_token})
     } catch (error) {
       console.log(error);
     }
