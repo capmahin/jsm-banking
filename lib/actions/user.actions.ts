@@ -113,7 +113,10 @@ export async function getLoggedInUser() {
         access_token: accessToken,
         account_id: accountData.account_id,
         processor:"dwolla" as ProcessorTokenCreateRequestProcessorEnum,
-      }
+      };
+
+      const processorTokenResponse= await plaidClient.processorTokenCreate(request);
+      const processorToken = processorTokenResponse.data.processor_token;
      } catch (error) {
       console.log("An error occurred while creating exchanging token:",error)
      }
