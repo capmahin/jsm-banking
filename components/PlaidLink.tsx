@@ -1,10 +1,11 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useState } from 'react'
 import { Button } from './ui/button'
 import { PlaidLinkOptions } from 'react-plaid-link'
 
 const PlaidLink = ({user, variant}: PlaidLinkProps) => {
+  const [token, setToken] = useState('')
   const onSuccess = useCallback(async()=>{
-
+   
   },[user])
 
   const config: PlaidLinkOptions={
