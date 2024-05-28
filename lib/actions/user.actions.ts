@@ -98,7 +98,10 @@ export async function getLoggedInUser() {
       const response = await plaidClient.
       itemPublicTokenExchange({
         public_token: publicToken
-      })
+      });
+
+      const accessToken = response.data.access_token;
+      const itemId= response.data.item_id;
      } catch (error) {
       console.log("An error occurred while creating exchanging token:",error)
      }
