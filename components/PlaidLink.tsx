@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { Button } from './ui/button'
 import { PlaidLinkOptions } from 'react-plaid-link'
+import { StyledString } from 'next/dist/build/swc';
 
 const PlaidLink = ({user, variant}: PlaidLinkProps) => {
   const [token, setToken] = useState('');
@@ -14,8 +15,11 @@ const PlaidLink = ({user, variant}: PlaidLinkProps) => {
 
     getLinkToken();
   },[])
-  const onSuccess = useCallback(async()=>{
-   
+  const onSuccess = useCallback(async(public_token:StyledString)=>{
+    //  await exchangePublicToken({
+    //   publicToken: public_token,
+    //   user,
+    //  })
   },[user])
 
   const config: PlaidLinkOptions={
