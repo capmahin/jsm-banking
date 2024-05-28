@@ -4,7 +4,7 @@ import { ID } from "node-appwrite";
 import { createAdminClient, createSessionClient } from "../appwrite";
 import { cookies } from "next/headers";
 import { parseStringify } from "../utils";
-import { CountryCode, Products } from "plaid";
+import { CountryCode, ProcessorTokenCreateRequest, ProcessorTokenCreateRequestProcessorEnum, Products } from "plaid";
 import { plaidClient } from "../plaid";
 
 export const signIn =async ({email, password}: signInProps)=>{
@@ -108,6 +108,12 @@ export async function getLoggedInUser() {
       });
 
       const accountData = accountsResponse.data.accounts[0];
+
+      const request: ProcessorTokenCreateRequest={
+        access_token: accessToken,
+        account_id: accountData.account_id,
+        processor:"dwolla" as ProcessorTokenCreateRequestProcessorEnum,
+      }
      } catch (error) {
       console.log("An error occurred while creating exchanging token:",error)
      }
