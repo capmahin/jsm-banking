@@ -4,6 +4,7 @@ import { ID } from "node-appwrite";
 import { createAdminClient, createSessionClient } from "../appwrite";
 import { cookies } from "next/headers";
 import { parseStringify } from "../utils";
+import { Products } from "plaid";
 
 export const signIn =async ({email, password}: signInProps)=>{
     try {
@@ -74,6 +75,8 @@ export async function getLoggedInUser() {
         user:{
           client_user_id: user.$id
         },
+        client_name:user.name,
+        products:['auth'] as Products[]
       }
     } catch (error) {
       console.log(error);
