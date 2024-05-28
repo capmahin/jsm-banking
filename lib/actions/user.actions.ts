@@ -94,5 +94,9 @@ export async function getLoggedInUser() {
     publicToken,
     user,
   }: exchangePublicTokenProps )=>{
-
+     try {
+      
+     } catch (error) {
+      
+     }
   }
