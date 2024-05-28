@@ -2,8 +2,10 @@ import React, { useCallback, useEffect, useState } from 'react'
 import { Button } from './ui/button'
 import { PlaidLinkOptions } from 'react-plaid-link'
 import { StyledString } from 'next/dist/build/swc';
+import { useRouter } from 'next/navigation';
 
 const PlaidLink = ({user, variant}: PlaidLinkProps) => {
+  const router = useRouter();
   const [token, setToken] = useState('');
 
   useEffect(()=>{
