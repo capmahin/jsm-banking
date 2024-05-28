@@ -70,7 +70,11 @@ export async function getLoggedInUser() {
 
   export const createLinkToken= async(user: User)=>{
     try {
-      
+      const tokenParams={
+        user:{
+          client_user_id: user.$id
+        },
+      }
     } catch (error) {
       console.log(error);
     }
