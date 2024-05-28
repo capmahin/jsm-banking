@@ -89,3 +89,10 @@ export async function getLoggedInUser() {
       console.log(error);
     }
   }
+
+  export const exchangePublicToken= async({
+    publicToken,
+    user,
+  }: exchangePublicTokenProps )=>{
+
+  }
