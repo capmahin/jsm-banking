@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { Button } from './ui/button'
-import { PlaidLinkOnSuccess, PlaidLinkOptions } from 'react-plaid-link'
+import { PlaidLinkOnSuccess, PlaidLinkOptions, usePlaidLink } from 'react-plaid-link'
 import { StyledString } from 'next/dist/build/swc';
 import { useRouter } from 'next/navigation';
 
@@ -26,10 +26,14 @@ const PlaidLink = ({user, variant}: PlaidLinkProps) => {
     router.push('/');
   },[user])
 
+
+
   const config: PlaidLinkOptions={
     token,
     onSuccess
   }
+
+  const {open, ready} = usePlaidLink(config)
   return (
     <>
      {variant === 'primary'? (
