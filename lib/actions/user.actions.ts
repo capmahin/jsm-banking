@@ -97,6 +97,6 @@ export async function getLoggedInUser() {
      try {
       
      } catch (error) {
-      
+      console.log("An error occurred while creating exchanging token:",error)
      }
   }
