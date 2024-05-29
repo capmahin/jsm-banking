@@ -131,12 +131,12 @@ export async function getLoggedInUser() {
       const processorToken = processorTokenResponse.data.processor_token;
 
 
-      const fundingSourceUrl= await addFundingSource({
-        dowllaCustomerId: user.dwollaCustomerId,
-        processorToken,
-        bankName: accountData.name,
-
-      });
+      // Create a funding source URL for the account using the Dwolla customer ID, processor token, and bank name
+     const fundingSourceUrl = await addFundingSource({
+      dwollaCustomerId: user.dwollaCustomerId,
+      processorToken,
+      bankName: accountData.name,
+    });
 
       // If the funding source URL is not created, throw an error
     if (!fundingSourceUrl) throw Error;
