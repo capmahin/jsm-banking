@@ -7,6 +7,7 @@ import { encryptId, parseStringify } from "../utils";
 import { CountryCode, ProcessorTokenCreateRequest, ProcessorTokenCreateRequestProcessorEnum, Products } from "plaid";
 import { plaidClient } from "../plaid";
 import { revalidatePath } from "next/cache";
+import { addFundingSource } from "./dwolla.actions";
 
 export const signIn =async ({email, password}: signInProps)=>{
     try {
@@ -88,6 +89,16 @@ export async function getLoggedInUser() {
       return parseStringify({linkToken: response.data.link_token})
     } catch (error) {
       console.log(error);
+    }
+  }
+
+  export const createBankAccount = async ({
+
+  })=>{
+    try {
+      
+    } catch (error) {
+      
     }
   }
 
