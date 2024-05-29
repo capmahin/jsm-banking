@@ -3,9 +3,10 @@
 import { ID } from "node-appwrite";
 import { createAdminClient, createSessionClient } from "../appwrite";
 import { cookies } from "next/headers";
-import { parseStringify } from "../utils";
+import { encryptId, parseStringify } from "../utils";
 import { CountryCode, ProcessorTokenCreateRequest, ProcessorTokenCreateRequestProcessorEnum, Products } from "plaid";
 import { plaidClient } from "../plaid";
+import { revalidatePath } from "next/cache";
 
 export const signIn =async ({email, password}: signInProps)=>{
     try {
@@ -117,6 +118,35 @@ export async function getLoggedInUser() {
 
       const processorTokenResponse= await plaidClient.processorTokenCreate(request);
       const processorToken = processorTokenResponse.data.processor_token;
+
+
+      const fundingSourceUrl= await addFundingSource({
+        dowllaCustomerId: user.dwollaCustomerId,
+        processorToken,
+        bankName: accountData.name,
+
+      });
+
+      // If the funding source URL is not created, throw an error
+    if (!fundingSourceUrl) throw Error;
+
+     // Create a bank account using the user ID, item ID, account ID, access token, funding source URL, and shareableId ID
+     await createBankAccount({
+      userId: user.$id,
+      bankId: itemId,
+      accountId: accountData.account_id,
+      accessToken,
+      fundingSourceUrl,
+      shareableId: encryptId(accountData.account_id),
+    });
+
+     // Revalidate the path to reflect the changes
+     revalidatePath("/");
+
+     // Return a success message
+    return parseStringify({
+      publicTokenExchange: "complete",
+    });
      } catch (error) {
       console.log("An error occurred while creating exchanging token:",error)
      }
