@@ -101,6 +101,7 @@ export async function getLoggedInUser() {
     sharableId,
   }: createBankAccountProps)=>{
     try {
+      const {database} = await createAdminClient();
       
     } catch (error) {
       
