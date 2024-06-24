@@ -9,6 +9,12 @@ import { plaidClient } from "../plaid";
 import { revalidatePath } from "next/cache";
 import { addFundingSource } from "./dwolla.actions";
 
+const {
+  APPWRITE_DATABASE_ID: DATABASE_ID,
+  APPWRITE_USER_COLLECTION_ID: USER_COLLECTION_ID,
+  APPWRITE_BANK_COLLECTION_ID: BANK_COLLECTION_ID,
+} = process.env;
+
 export const signIn =async ({email, password}: signInProps)=>{
     try {
       const { account } = await createAdminClient();
@@ -102,6 +108,19 @@ export async function getLoggedInUser() {
   }: createBankAccountProps)=>{
     try {
       const {database} = await createAdminClient();
+      const bankAccount = await database.createDocument(
+        DATABASE_ID!,
+        BANK_COLLECTION_ID!,
+        ID.unique(),
+        {
+          userId,
+          bankId,
+          accountId,
+          accessToken,
+          fundingSourceUrl,
+          sharableId,
+        }
+      )
       
     } catch (error) {
       
