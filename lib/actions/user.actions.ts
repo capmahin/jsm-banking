@@ -121,8 +121,11 @@ export async function getLoggedInUser() {
           sharableId,
         }
       )
+
+      return parseStringify(bankAccount)
       
     } catch (error) {
+      console.log(error);
       
     }
   }
