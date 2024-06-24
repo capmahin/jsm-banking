@@ -93,8 +93,13 @@ export async function getLoggedInUser() {
   }
 
   export const createBankAccount = async ({
-
-  })=>{
+    userId,
+    bankId,
+    accountId,
+    accessToken,
+    fundingSourceUrl,
+    sharableId,
+  }: createBankAccountProps)=>{
     try {
       
     } catch (error) {
